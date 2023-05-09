@@ -182,6 +182,7 @@ module SingleCycleDataPath
     wire [4:0] rd;
     wire [4:0] shamt;
     wire [5:0] funct;
+    // change
 
     wire [15:0] instruction_1;
 

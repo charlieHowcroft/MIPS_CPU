@@ -20,10 +20,10 @@
 `define ADD  'b00010
 `define SUB  'b01010
 `define SLT  'b01011
-`define NOR  'b11000
-`define NAND 'b11001
-`define SLL  'b00100
-`define SRL  'b00101
+// `define NOR  'b11000
+// `define NAND 'b11001
+// `define SLL  'b00100
+// `define SRL  'b00101
 
 module ALU
     #(parameter DATA_WIDTH = 32)
@@ -38,8 +38,35 @@ module ALU
     output[3:0] statusOut;
 
     // TODO
+    //multiplexor, output of multiplexor = out
+    case (control)
+        AND: out <= a & b;
+        OR: out <= a | b;
+        ADD: out <= a + b;
+        SUB: out <= a - b;
+        SLT: out = ()
+        begin
+            
+        end
+
+
+
+        default: 
+
+    wire [31:0] final_MUX_input;
+    MUX_5_bit MUX(.in(in), .choose(b_inv), .z_out(b_out));
+    assign final_MUX_input[0] = sum_out;  
 
 endmodule
+
+
+module MUX_5_bit(input [31:0] in, input [5:0] choose, output z_out);
+    
+    assign z_out = in[choose];
+
+endmodule
+
+
 
 /**
  * Basic clocked register.

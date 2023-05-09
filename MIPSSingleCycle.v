@@ -177,6 +177,27 @@ module SingleCycleDataPath
     output[DATA_WIDTH-1:0] dataWriteValue;
 
     // TODO: Specify all wiring.
+    wire [4:0] rs;
+    wire [4:0] rt;
+    wire [4:0] rd;
+    wire [4:0] shamt;
+    wire [5:0] funct;
+
+    wire [15:0] instruction_1;
+
+    case(instruction[31:26])
+        b'000000: 
+            begin
+                // R-Type Instruction
+                rs = instruction[25:21]; rt = instruction[20:16]; rd = instruction[15:11]; shamt = instruction[10:6]; funct = instruction[5:0];
+            end
+        b'000000:
+            begin
+                rs = instruction[25:21];
+                rt = instruction[20:16];
+                instruction_1 = instruction[15:0];
+            end
+    endcase
 
     // Program Counter:
     Register

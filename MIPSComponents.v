@@ -37,14 +37,19 @@ module ALU
     output reg[DATA_WIDTH-1:0] out;
     output[3:0] statusOut;
 
-    // TODO
+    // TODO EDITED
     //multiplexor, output of multiplexor = out
     case (control)
         AND: out <= a & b;
         OR: out <= a | b;
-        ADD: out <= a + b;
+        ADD: out <= a + b + statusIn[`STATUS_C_BIT];
         SUB: out <= a - b;
-        SLT: out = ()
+        SLT: if (a<b)out <= 'd1;else out <= 'd0;
+        NOR: out <= ~(a|b);
+        NAND: out <= ~(a&b);
+        XOR: out <= a^b;
+        XNOR: out <= ~a^b;
+        default :out <= 'd0;
         begin
             
         end
@@ -76,7 +81,9 @@ module Register
     #(parameter DATA_WIDTH=32)
     (input [DATA_WIDTH-1:0] D, input clock, output reg [DATA_WIDTH-1:0] Q);
 
-    // TODO
+    // TODO EDITED
+    always@(posedge clock)
+    Q<=D;
 
 endmodule
 

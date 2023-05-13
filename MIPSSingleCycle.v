@@ -156,7 +156,29 @@ endmodule
 
 module ALUControl(input[2:0] aluOp, input[5:0] funct, output reg[4:0] operation, output jr);
 
-    // TODO
+    // TODO EDITED
+    always@(*)
+  if(aluOp==3'b000)operation<=~ADD
+  else if(aluOp==3'b001)operation<=~SUB
+  else if(aluOp==3'b010)operation<=~AND
+  else if(aluOp==3'b011)operation<=~OR
+  else if(aluOp==3'b100)
+    case (funct)
+        6'b100100:operation<=AND;
+        6'b100101:operation<=OR;
+        6'b000000:operation<=ADD;
+        6'b000010:operation<=SUB;
+        6'b101010:operation<=SIT;
+        6'b100111:operation<=NOR;
+        //6"b101000:operation<=NAND;
+        //6'b000000:operation<=SIL;
+        //6"b000000:operation<=SRL;
+        6'b100110:operation<=XOR ;
+        //6'b101111:operation<=XNOR;
+        default:operation<=ADD;
+    endcase
+  else
+        operation<=ADD;
 
 endmodule
 
@@ -214,7 +236,9 @@ module SingleCycleDataPath
 
     // TODO: Create and wire the ALU
 
-    // Register File:
+
+
+    // Register File: 
     RegisterFile 
         #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH))
         rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, a, rtValue);

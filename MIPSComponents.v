@@ -20,55 +20,57 @@
 `define ADD  'b00010
 `define SUB  'b01010
 `define SLT  'b01011
-// `define NOR  'b11000
-// `define NAND 'b11001
-// `define SLL  'b00100
-// `define SRL  'b00101
+`define NOR  'b11000
+`define NAND 'b11001
+`define SLL  'b00100
+`define SRL  'b00101
 
 module ALU
     #(parameter DATA_WIDTH = 32)
-    (control, a, b, shiftAmount, statusIn, out, statusOut);
+    (control, a, b, statusIn, out, statusOut);
 
     input[4:0] control;
     input[DATA_WIDTH-1:0] a, b;
-    input[4:0] shiftAmount;
+    // input[4:0] shiftAmount;
     input[3:0] statusIn;
 
+    reg [DATA_WIDTH:0] result;
     output reg[DATA_WIDTH-1:0] out;
     output[3:0] statusOut;
 
     // TODO EDITED
     //multiplexor, output of multiplexor = out
-    case (control)
-        AND: out <= a & b;
-        OR: out <= a | b;
-        ADD: out <= a + b + statusIn[`STATUS_C_BIT];
-        SUB: out <= a - b;
-        SLT: if (a<b)out <= 'd1;else out <= 'd0;
-        NOR: out <= ~(a|b);
-        NAND: out <= ~(a&b);
-        XOR: out <= a^b;
-        XNOR: out <= ~a^b;
-        default :out <= 'd0;
-        begin
-            
-        end
-
-
-
-        default: 
-
-    wire [31:0] final_MUX_input;
-    MUX_5_bit MUX(.in(in), .choose(b_inv), .z_out(b_out));
-    assign final_MUX_input[0] = sum_out;  
-
-endmodule
-
-
-module MUX_5_bit(input [31:0] in, input [5:0] choose, output z_out);
+    always@(control, a, b, statusIn) begin
+        case (control)
+            'b00000: begin
+                    result = a & b; //and
+                    out = result[DATA_WIDTH-1:0];
+                    end
+            'b00001: begin
+                    result <= a | b; //or
+                    out = result[DATA_WIDTH-1:0];
+                    end
+            'b00010: begin
+                    result = a + b  + statusIn[`STATUS_C_BIT]; //add
+                    out = result[DATA_WIDTH-1:0];
+                end
+            'b01010: begin
+                    result <= a - b; //sub
+                    out = result[DATA_WIDTH-1:0];
+                    end
+            'b01011: begin
+                    result <= (a < b) ? 1 : 0; //SLT
+                    out = result[DATA_WIDTH-1:0];
+                    end
+            'b11000: begin
+                    result <= !(a | b); //NOR
+                    out = result[DATA_WIDTH-1:0];
+                    end
+            default: out <= 1;
+        endcase
+    end
+    assign statusOut[`STATUS_C_BIT] = result[DATA_WIDTH];
     
-    assign z_out = in[choose];
-
 endmodule
 
 

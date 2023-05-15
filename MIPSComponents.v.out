@@ -1,0 +1,196 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002716161cf00 .scope module, "ALU" "ALU" 2 28;
+ .timescale 0 0;
+    .port_info 0 /INPUT 5 "control";
+    .port_info 1 /INPUT 32 "a";
+    .port_info 2 /INPUT 32 "b";
+    .port_info 3 /INPUT 4 "statusIn";
+    .port_info 4 /OUTPUT 32 "out";
+    .port_info 5 /OUTPUT 4 "statusOut";
+P_0000027161606260 .param/l "DATA_WIDTH" 0 2 29, +C4<00000000000000000000000000100000>;
+o000002716161dfd8 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v00000271615cd840_0 .net "a", 31 0, o000002716161dfd8;  0 drivers
+o000002716161e008 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v00000271615cd8e0_0 .net "b", 31 0, o000002716161e008;  0 drivers
+o000002716161e038 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v00000271615cd980_0 .net "control", 4 0, o000002716161e038;  0 drivers
+v00000271615cda20_0 .var "out", 31 0;
+o000002716161e098 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v00000271615cdac0_0 .net "statusIn", 3 0, o000002716161e098;  0 drivers
+o000002716161e0c8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v00000271615cdb60_0 .net "statusOut", 3 0, o000002716161e0c8;  0 drivers
+E_00000271616066a0 .event anyedge, v00000271615cd8e0_0, v00000271615cd840_0, v00000271615cd980_0;
+S_000002716161d090 .scope module, "Register" "Register" 2 62;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "D";
+    .port_info 1 /INPUT 1 "clock";
+    .port_info 2 /OUTPUT 32 "Q";
+P_00000271616069e0 .param/l "DATA_WIDTH" 0 2 63, +C4<00000000000000000000000000100000>;
+o000002716161e218 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v00000271615cdc00_0 .net "D", 31 0, o000002716161e218;  0 drivers
+v0000027161666c50_0 .var "Q", 31 0;
+o000002716161e278 .functor BUFZ 1, C4<z>; HiZ drive
+v0000027161666cf0_0 .net "clock", 0 0, o000002716161e278;  0 drivers
+S_00000271615ce090 .scope module, "RegisterFile" "RegisterFile" 2 77;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clock";
+    .port_info 1 /INPUT 5 "address1";
+    .port_info 2 /INPUT 5 "address2";
+    .port_info 3 /INPUT 5 "writeAddress";
+    .port_info 4 /INPUT 32 "writeData";
+    .port_info 5 /INPUT 1 "regWrite";
+    .port_info 6 /OUTPUT 32 "outData1";
+    .port_info 7 /OUTPUT 32 "outData2";
+P_00000271615ce220 .param/l "ADDRESS_WIDTH" 0 2 78, +C4<00000000000000000000000000000101>;
+P_00000271615ce258 .param/l "DATA_WIDTH" 0 2 78, +C4<00000000000000000000000000100000>;
+L_00000271615e30e0 .functor BUFZ 32, L_0000027161612120, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+L_00000271616b75c0 .functor BUFZ 32, L_0000027161612bc0, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v0000027161612b20_0 .net *"_ivl_0", 31 0, L_0000027161612120;  1 drivers
+v00000271616129e0_0 .net *"_ivl_10", 6 0, L_0000027161611cc0;  1 drivers
+L_000002716166edf0 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0000027161612800_0 .net *"_ivl_13", 1 0, L_000002716166edf0;  1 drivers
+v0000027161612080_0 .net *"_ivl_2", 6 0, L_0000027161612440;  1 drivers
+L_000002716166eda8 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0000027161612940_0 .net *"_ivl_5", 1 0, L_000002716166eda8;  1 drivers
+v00000271616123a0_0 .net *"_ivl_8", 31 0, L_0000027161612bc0;  1 drivers
+o000002716161e458 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0000027161612a80_0 .net "address1", 4 0, o000002716161e458;  0 drivers
+o000002716161e488 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0000027161611fe0_0 .net "address2", 4 0, o000002716161e488;  0 drivers
+o000002716161e4b8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000027161612300_0 .net "clock", 0 0, o000002716161e4b8;  0 drivers
+v0000027161611ea0 .array "data", 0 32, 31 0;
+v0000027161611f40_0 .net "outData1", 31 0, L_00000271615e30e0;  1 drivers
+v00000271616128a0_0 .net "outData2", 31 0, L_00000271616b75c0;  1 drivers
+o000002716161e548 .functor BUFZ 1, C4<z>; HiZ drive
+v0000027161611d60_0 .net "regWrite", 0 0, o000002716161e548;  0 drivers
+o000002716161e578 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0000027161612620_0 .net "writeAddress", 4 0, o000002716161e578;  0 drivers
+o000002716161e5a8 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0000027161612260_0 .net "writeData", 31 0, o000002716161e5a8;  0 drivers
+E_00000271616062e0 .event posedge, v0000027161612300_0;
+L_0000027161612120 .array/port v0000027161611ea0, L_0000027161612440;
+L_0000027161612440 .concat [ 5 2 0 0], o000002716161e458, L_000002716166eda8;
+L_0000027161612bc0 .array/port v0000027161611ea0, L_0000027161611cc0;
+L_0000027161611cc0 .concat [ 5 2 0 0], o000002716161e488, L_000002716166edf0;
+S_00000271615ce2a0 .scope module, "SignExtend" "SignExtend" 2 100;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "unextended";
+    .port_info 1 /OUTPUT 32 "extended";
+P_00000271615ce430 .param/l "FROM_WIDTH" 0 2 101, +C4<00000000000000000000000000010000>;
+P_00000271615ce468 .param/l "TO_WIDTH" 0 2 101, +C4<00000000000000000000000000100000>;
+v0000027161612580_0 .net "extended", 31 0, L_00000271616121c0;  1 drivers
+o000002716161e788 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0000027161612760_0 .net "unextended", 15 0, o000002716161e788;  0 drivers
+L_00000271616121c0 .extend/s 32, o000002716161e788;
+    .scope S_000002716161cf00;
+T_0 ;
+    %wait E_00000271616066a0;
+    %load/vec4 v00000271615cd980_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.2, 6;
+    %dup/vec4;
+    %pushi/vec4 10, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.3, 6;
+    %dup/vec4;
+    %pushi/vec4 11, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.4, 6;
+    %dup/vec4;
+    %pushi/vec4 24, 0, 5;
+    %cmp/u;
+    %jmp/1 T_0.5, 6;
+    %pushi/vec4 1, 0, 32;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.0 ;
+    %load/vec4 v00000271615cd840_0;
+    %load/vec4 v00000271615cd8e0_0;
+    %and;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.1 ;
+    %load/vec4 v00000271615cd840_0;
+    %load/vec4 v00000271615cd8e0_0;
+    %or;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.2 ;
+    %load/vec4 v00000271615cd840_0;
+    %load/vec4 v00000271615cd8e0_0;
+    %add;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.3 ;
+    %load/vec4 v00000271615cd840_0;
+    %load/vec4 v00000271615cd8e0_0;
+    %sub;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.4 ;
+    %load/vec4 v00000271615cd840_0;
+    %load/vec4 v00000271615cd8e0_0;
+    %cmp/u;
+    %flag_mov 8, 5;
+    %jmp/0 T_0.8, 8;
+    %pushi/vec4 1, 0, 32;
+    %jmp/1 T_0.9, 8;
+T_0.8 ; End of true expr.
+    %pushi/vec4 0, 0, 32;
+    %jmp/0 T_0.9, 8;
+ ; End of false expr.
+    %blend;
+T_0.9;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.5 ;
+    %load/vec4 v00000271615cd840_0;
+    %load/vec4 v00000271615cd8e0_0;
+    %or;
+    %nor/r;
+    %pad/u 32;
+    %assign/vec4 v00000271615cda20_0, 0;
+    %jmp T_0.7;
+T_0.7 ;
+    %pop/vec4 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_00000271615ce090;
+T_1 ;
+    %wait E_00000271616062e0;
+    %load/vec4 v0000027161611d60_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %load/vec4 v0000027161612260_0;
+    %load/vec4 v0000027161612620_0;
+    %pad/u 7;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0000027161611ea0, 0, 4;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "MIPSComponents.v";

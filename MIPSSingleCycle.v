@@ -224,7 +224,9 @@ module SingleCycleDataPath
             end
         b'000000:
             begin
-                rs = instruction[25:21]; rt = instruction[20:16]; instruction_1 = instruction[15:0];
+                rs = instruction[25:21]; 
+                rt = instruction[20:16]; 
+                instruction_1 = instruction[15:0];
             end
     endcase
 

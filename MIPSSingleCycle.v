@@ -166,27 +166,27 @@ module ALUControl(input[2:0] aluOp, input[5:0] funct, output reg[4:0] operation,
 
     // TODO EDITED
     always@(*)
-  if(aluOp==3'b000)operation<=~ADD
-  else if(aluOp==3'b001)operation<=~SUB
-  else if(aluOp==3'b010)operation<=~AND
-  else if(aluOp==3'b011)operation<=~OR
+  if(aluOp==3'b000)operation<=`ALU_ADD
+  else if(aluOp==3'b001)operation<=`ALU_SUB
+  else if(aluOp==3'b010)operation<=`ALU_AND
+  else if(aluOp==3'b011)operation<=`ALU_OR
   else if(aluOp==3'b100)
     case (funct)
-        6'b100100:operation<=AND;
-        6'b100101:operation<=OR;
-        6'b000000:operation<=ADD;
-        6'b000010:operation<=SUB;
-        6'b101010:operation<=SIT;
-        6'b100111:operation<=NOR;
-        //6"b101000:operation<=NAND;
-        //6'b000000:operation<=SIL;
-        //6"b000000:operation<=SRL;
-        6'b100110:operation<=XOR ;
-        //6'b101111:operation<=XNOR;
-        default:operation<=ADD;
+        6'b100100:operation<=`ALU_AND;
+        6'b100101:operation<=`ALU_OR;
+        6'b000000:operation<=`ALU_ADD;
+        6'b000010:operation<=`ALU_SUB;
+        6'b101010:operation<=`ALU_SIT;
+        6'b100111:operation<=`ALU_NOR;
+        //6"b101000:operation<=`ALU_NAND;
+        //6'b000000:operation<=`ALU_SIL;
+        //6"b000000:operation<=`ALU_SRL;
+        6'b100110:operation<=`ALU_XOR ;
+        //6'b101111:operation<=`ALU_XNOR;
+        default:operation<=`ALU_ADD;
     endcase
   else
-        operation<=ADD;
+        operation<=`ALU_ADD;
 
 endmodule
 

@@ -38,8 +38,7 @@ module ALU
     output reg[DATA_WIDTH-1:0] out;
     output[3:0] statusOut;
 
-    // TODO EDITED
-    //multiplexor, output of multiplexor = out
+    // TODO
     always@(control, a, b, statusIn) begin
         case (control)
             'b00000: begin
@@ -55,22 +54,25 @@ module ALU
                     out = result[DATA_WIDTH-1:0];
                 end
             'b01010: begin
-                    result <= a - b; //sub
+                    result = a - b; //sub
                     out = result[DATA_WIDTH-1:0];
                     end
             'b01011: begin
-                    result <= (a < b) ? 1 : 0; //SLT
+                    result = (a < b) ? 1 : 0; //SLT
                     out = result[DATA_WIDTH-1:0];
                     end
             'b11000: begin
-                    result <= !(a | b); //NOR
+                    result = !(a | b); //NOR
                     out = result[DATA_WIDTH-1:0];
                     end
             default: out <= 1;
         endcase
     end
     assign statusOut[`STATUS_C_BIT] = result[DATA_WIDTH];
-    
+    assign statusOut[`STATUS_Z_BIT] = result == 0;
+    assign statusOut[`STATUS_N_BIT] = result[DATA_WIDTH-1];
+    assign statusOut[`STATUS_V_BIT] = result[DATA_WIDTH];
+
 endmodule
 
 

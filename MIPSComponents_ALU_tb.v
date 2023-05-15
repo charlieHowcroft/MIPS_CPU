@@ -28,6 +28,8 @@ module ALU_tb();
                    a, b, out, so[`STATUS_V_BIT], so[`STATUS_N_BIT], so[`STATUS_Z_BIT], so[`STATUS_C_BIT]);
       
       control = `ADD;
+      a = 'h7FFFFFFF;
+      b = 'h00000001;
       #20 $display("%0h + %0h = %0h; V=%0b, N=%0b, Z=%0b, C=%0b",
                    a, b, out, so[`STATUS_V_BIT], so[`STATUS_N_BIT], so[`STATUS_Z_BIT], so[`STATUS_C_BIT]);
 

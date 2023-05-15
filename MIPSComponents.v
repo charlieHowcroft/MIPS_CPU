@@ -37,6 +37,7 @@ module ALU
     reg [DATA_WIDTH:0] result;
     output reg[DATA_WIDTH-1:0] out;
     output[3:0] statusOut;
+    reg [DATA_WIDTH:0] shifted;
 
     // TODO
     always@(control, a, b, statusIn) begin
@@ -50,6 +51,7 @@ module ALU
                     out = result[DATA_WIDTH-1:0];
                     end
             'b00010: begin
+                    // shifted = statusIn[`STATUS_C_BIT] << DATA_WIDTH;
                     result = a + b  + statusIn[`STATUS_C_BIT]; //add
                     out = result[DATA_WIDTH-1:0];
                 end
@@ -71,10 +73,17 @@ module ALU
     assign statusOut[`STATUS_C_BIT] = result[DATA_WIDTH];
     assign statusOut[`STATUS_Z_BIT] = result == 0;
     assign statusOut[`STATUS_N_BIT] = result[DATA_WIDTH-1];
-    assign statusOut[`STATUS_V_BIT] = result[DATA_WIDTH];
+
+    wire overflow_wire;
+    overflow f(.a(a[DATA_WIDTH-1]), .b(b[DATA_WIDTH-1]), .result(result[DATA_WIDTH-1]), .ALU_CNTRL(control), .overflow(overflow_wire));
+    assign statusOut[`STATUS_V_BIT] = overflow_wire;
 
 endmodule
 
+
+module overflow(input a, input b, input result, input [4:0] ALU_CNTRL, output overflow);
+    assign overflow = (ALU_CNTRL == `ADD | ALU_CNTRL == `SUB) ? (~a & ~b & result | a & b & ~result) : 0;
+endmodule
 
 
 /**
@@ -86,9 +95,7 @@ module Register
     (input [DATA_WIDTH-1:0] D, input clock, output reg [DATA_WIDTH-1:0] Q);
 
     // TODO EDITED
-    always@(posedge clock)
-    Q<=D;
-
+    always@(posedge clock) Q<=D;
 endmodule
 
 /**

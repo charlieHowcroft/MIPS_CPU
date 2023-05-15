@@ -139,15 +139,23 @@
 module Control(input[5:0] opcode, output reg[`CONTROL_WIDTH-1:0] control);
     
     always @(opcode) begin
+        //EDITED
         case (opcode)
-            /* R-Type */ 'b000000: control <= `DST_RD | `ALU_TO_REG | `ALU_FUNCT | `ALU_SRC_REG | `REG_WRITE | `ENABLE_INT;
+            /* R-Type */ 
+            'b000000: control <= `DST_RD | `ALU_TO_REG | `ALU_FUNCT | `ALU_SRC_REG | `REG_WRITE | `ENABLE_INT;
             /* LW */     // TODO
+            'b100011: control <= `ENABLE_INT | `DST_RT | `MEM_READ | `MEM_TO_REG | `ALU_ADD | `ALU_SRC_IMM | `REG_WRITE;
             /* SW */     // TODO
+            'b101011: control <= `ALU_ADD | `MEM_WRITE | `ALU_SRC_IMM;
             /* BEQ */    // TODO
+            'b000100: control <= `BEQ | `ALU_SUB | `ALU_SRC_REG;
             /* J */      // TODO
+            'b000010: control <= `JUMP_BIT | `ALU_SRC_IMM;
             /* addi  */  // TODO
+            'b001000: control <= `ENABLE_INT | `DST_RT | `ALU_TO_REG | `ALU_ADD | `ALU_SRC_IMM | `REG_WRITE;
 
-            default: control <= `EPC_WRITE | `CAUSE_WRITE |`INT_IBUS;
+
+            default: control <= `EPC_WRITE_BIT | `CAUSE_WRITE_BIT |`INT_IBUS;
 
         endcase
     end

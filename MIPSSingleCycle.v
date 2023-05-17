@@ -153,7 +153,10 @@ module Control(input[5:0] opcode, output reg[`CONTROL_WIDTH-1:0] control);
             'b000010: control <= `JUMP_BIT | `ALU_SRC_IMM;
             /* addi  */  // TODO
             'b001000: control <= `ENABLE_INT | `DST_RT | `ALU_TO_REG | `ALU_ADD | `ALU_SRC_IMM | `REG_WRITE;
-
+            /* addiu  */
+            'b001001: control <= `ENABLE_INT | `DST_RT | `ALU_TO_REG | `ALU_ADD | `ALU_SRC_IMM | `REG_WRITE;
+            /* lui  */
+            'b001111: control <= `ENABLE_INT | `DST_RT | `ALU_ADD | `IMM_L16_TO_REG | `REG_WRITE;
 
             default: control <= `EPC_WRITE_BIT | `CAUSE_WRITE_BIT |`INT_IBUS;
 
@@ -178,11 +181,11 @@ module ALUControl(input[2:0] aluOp, input[5:0] funct, output reg[4:0] operation,
         6'b000010:operation<=`ALU_SUB;
         6'b101010:operation<=`ALU_SIT;
         6'b100111:operation<=`ALU_NOR;
-        //6"b101000:operation<=`ALU_NAND;
+        6'b101000:operation<=`ALU_NAND;
         //6'b000000:operation<=`ALU_SIL;
         //6"b000000:operation<=`ALU_SRL;
         6'b100110:operation<=`ALU_XOR ;
-        //6'b101111:operation<=`ALU_XNOR;
+        6'b101111:operation<=`ALU_XNOR;
         default:operation<=`ALU_ADD;
     endcase
   else

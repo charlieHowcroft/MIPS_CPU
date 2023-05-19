@@ -179,10 +179,10 @@ module ALUControl(input[2:0] aluOp, input[5:0] funct, output reg[4:0] operation,
         6'b100101:operation<=`ALU_OR;
         6'b000000:operation<=`ALU_ADD;
         6'b000010:operation<=`ALU_SUB;
-        6'b101010:operation<=`ALU_SIT;
+        6'b101010:operation<=`ALU_SLT;
         6'b100111:operation<=`ALU_NOR;
         6'b101000:operation<=`ALU_NAND;
-        //6'b000000:operation<=`ALU_SIL;
+        //6'b000000:operation<=`ALU_SLL;
         //6"b000000:operation<=`ALU_SRL;
         6'b100110:operation<=`ALU_XOR ;
         6'b101111:operation<=`ALU_XNOR;

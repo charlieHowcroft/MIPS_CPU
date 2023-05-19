@@ -139,7 +139,7 @@
 module Control(input[5:0] opcode, output reg[`CONTROL_WIDTH-1:0] control);
     
     always @(opcode) begin
-        //EDITED
+        //EDITED edit maybe???
         case (opcode)
             /* R-Type */ 
             'b000000: control <= `DST_RD | `ALU_TO_REG | `ALU_FUNCT | `ALU_SRC_REG | `REG_WRITE | `ENABLE_INT;
@@ -158,6 +158,7 @@ module Control(input[5:0] opcode, output reg[`CONTROL_WIDTH-1:0] control);
             /* lui  */
             'b001111: control <= `ENABLE_INT | `DST_RT | `ALU_ADD | `IMM_L16_TO_REG | `REG_WRITE;
 
+
             default: control <= `EPC_WRITE_BIT | `CAUSE_WRITE_BIT |`INT_IBUS;
 
         endcase
@@ -168,29 +169,29 @@ endmodule
 module ALUControl(input[2:0] aluOp, input[5:0] funct, output reg[4:0] operation, output jr);
 
     // TODO EDITED
-    always@(*)
-  if(aluOp==3'b000)operation<=`ALU_ADD
-  else if(aluOp==3'b001)operation<=`ALU_SUB
-  else if(aluOp==3'b010)operation<=`ALU_AND
-  else if(aluOp==3'b011)operation<=`ALU_OR
-  else if(aluOp==3'b100)
-    case (funct)
-        6'b100100:operation<=`ALU_AND;
-        6'b100101:operation<=`ALU_OR;
-        6'b000000:operation<=`ALU_ADD;
-        6'b000010:operation<=`ALU_SUB;
-        6'b101010:operation<=`ALU_SLT;
-        6'b100111:operation<=`ALU_NOR;
-        6'b101000:operation<=`ALU_NAND;
-        //6'b000000:operation<=`ALU_SLL;
-        //6"b000000:operation<=`ALU_SRL;
-        6'b100110:operation<=`ALU_XOR ;
-        6'b101111:operation<=`ALU_XNOR;
-        default:operation<=`ALU_ADD;
-    endcase
-  else
-        operation<=`ALU_ADD;
-
+    always@(*) begin
+        if(aluOp==3'b000) operation <= `ALU_ADD;
+        else if(aluOp==3'b001) operation <= `ALU_SUB;
+        else if(aluOp==3'b010) operation <= `ALU_AND;
+        else if(aluOp==3'b011) operation <= `ALU_OR;
+        else if(aluOp==3'b100)
+            case (funct)
+                6'b100100: operation<=`ALU_AND;
+                6'b100101: operation<=`ALU_OR;
+                6'b000000: operation<=`ALU_ADD;
+                6'b000010: operation<=`ALU_SUB;
+                // 6'b101010: operation<=`ALU_SRL;
+                // 6'b100111: operation<=`ALU_NOR;
+                //6"b101000:operation<=`ALU_NAND;
+                //6'b000000:operation<=`ALU_SIL;
+                //6"b000000:operation<=`ALU_SRL;
+                // 6'b100110: operation<=`ALU_XOR;
+                //6'b101111:operation<=`ALU_XNOR;
+                default:operation<=`ALU_ADD;
+            endcase
+        else
+                operation<=`ALU_ADD;
+    end
 endmodule
 
 module SingleCycleDataPath
@@ -215,28 +216,49 @@ module SingleCycleDataPath
     wire [4:0] rd;
     wire [4:0] shamt;
     wire [5:0] funct;
-    // change
+    wire [15:0] address;
 
-    wire [15:0] instruction_1;
+    //instruction decode
+    //instruction[31:26] is opcode
+    always@(aluOp, funct) begin
+        case(instruction[31:26])
+            6'b000000: // R-Type Instruction
+                begin
+                    rs = instruction[25:21]; 
+                    rt = instruction[20:16]; 
+                    rd = instruction[15:11]; 
+                    shamt = instruction[10:6]; 
+                    funct = instruction[5:0];
+                end
+            6'b100011: //LW instruction
+                begin
+                    rs = instruction[25:21]; 
+                    rt = instruction[20:16]; 
+                    address = instruction[15:0];
+                end
+            6'b101011: //SW instruction
+                begin
+                    rs = instruction[25:21]; 
+                    rt = instruction[20:16]; 
+                    address = instruction[15:0];
+                end
+            6'b000100: //Branch instructions
+                begin
+                    rs = instruction[25:21]; 
+                    rt = instruction[20:16]; 
+                    address = instruction[15:0];
+                end
+            6'b000010: //jump
+                address = instruction[25:0];
+            6'b001000: begin
+                        //rs = instruction
+                    end
 
-    case(instruction[31:26])
-        b'000000: 
-            begin
-                // R-Type Instruction
-                rs = instruction[25:21]; rt = instruction[20:16]; rd = instruction[15:11]; shamt = instruction[10:6]; funct = instruction[5:0];
-            end
-        b'000000:
-            begin
-                rs = instruction[25:21]; 
-                rt = instruction[20:16]; 
-                instruction_1 = instruction[15:0];
-            end
-    endcase
+        endcase
+    end
 
     // Program Counter:
-    Register
-        #(.DATA_WIDTH(ADDRESS_WIDTH))
-        pcRegister(nextPC, clock, pc);
+    Register #(.DATA_WIDTH(ADDRESS_WIDTH)) pcRegister(nextPC, clock, pc);
 
     initial begin
         nextPC <= 'h00400000;
@@ -245,19 +267,72 @@ module SingleCycleDataPath
 
     assign pcPlus4 = pc + 4;
 
-    // TODO: Create and wire the ALU
-
-
-
-    // Register File: 
-    RegisterFile 
-        #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH))
-        rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, a, rtValue);
-
     initial begin
         rf.data[`sp] = 'h100103fc;
     end
 
+    // Register File:
+    wire [31:0] data_1;
+    wire [31:0] data_2;
+
+    //mux 1
+    wire [4:0] writeRegAddress;
+    assign writeRegAddress = control[REG_DST_BIT2] ? rd : rt;
+    wire regWrite;
+    assign regWrite = control[REG_WRITE_BIT];
+    RegisterFile #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH)) rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, data_1, data_2);
+
+
     // TODO: Other logic, e.g. decode instruction, control, sign extend, wiring and logic for the register file
+    wire [`CONTROL_WIDTH-1:0] control;
+    Control mainControl(.opcode(instruction[31:26]), .control(control));
+
+    //Signextend
+    wire [DATA_WIDTH-1:0] extended;
+    SignExtend se (instruction[15:0], extended);
+
+    //ALU Control
+    wire [4:0] operation;
+    wire jr;
+    ALUControl aluctrl(control[ALU_OP_BIT3:ALU_OP_BIT1], instruction[5:0] ,operation, jr);
+
+    // TODO: Create and wire the ALU
+    output wire [3:0] status_out;
+	output wire [31:0] ALU_out;
+    ALU #(.DATA_WIDTH(32)) alu(operation, data_1, data_2, si, ALU_out, status_out);
+    wire overflow;
+    wire negative;
+    wire zero;
+    wire carry;
+    assign {overflow, negative, zero, carry} = status_out;
+
+    //MUX 2, into ALU
+    wire [DATA_WIDTH-1:0] alu_input_b;
+    assign alu_input_b = control[ALU_SRC_BIT] ? extended : data_2;
+
+    //shift left 2
+    wire [DATA_WIDTH-1:0] shifted;
+    assign shifted = extended << 2;
+
+    //ALU result
+    wire [DATA_WIDTH-1:0] ALU_result;
+    assign ALU_result = pcPlus4 + shifted;
+
+    //MUX 3
+    wire [DATA_WIDTH-1:0] nextPC;
+    assign nextPC = (control[Branch] & zero) ? ALU_result : pcPlus4;
+
+
+
+    //outputs
+    //data mem output
+    assign dataMemWrite = control[MEM_WRITE_BIT];
+    // Data memory output
+    assign dataMemAddress = ALU_out;
+    // next instruction ouput
+    assign insMemAddress = pcPlus4;
+    assign dataWriteValue = data_2;
+    assign dataMemRead = control[MEM_READ_BIT];
+
 
 endmodule

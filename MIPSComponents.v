@@ -77,13 +77,12 @@ module ALU
     wire overflow_wire;
     overflow f(.a(a[DATA_WIDTH-1]), .b(b[DATA_WIDTH-1]), .result(result[DATA_WIDTH-1]), .ALU_CNTRL(control), .overflow(overflow_wire));
     assign statusOut[`STATUS_V_BIT] = overflow_wire;
-
 endmodule
-
 
 module overflow(input a, input b, input result, input [4:0] ALU_CNTRL, output overflow);
     assign overflow = (ALU_CNTRL == `ADD | ALU_CNTRL == `SUB) ? (~a & ~b & result | a & b & ~result) : 0;
 endmodule
+
 
 
 /**

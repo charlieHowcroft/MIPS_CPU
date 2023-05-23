@@ -211,45 +211,91 @@ module SingleCycleDataPath
     output[DATA_WIDTH-1:0] dataWriteValue;
 
     // TODO: Specify all wiring.
+    // Instruction decoder
+    reg [4:0] reg_rs;
+    reg [4:0] reg_rt;
+    reg [4:0] reg_rd;
+    reg [4:0] reg_shamt;
+    reg [5:0] reg_funct;
+    reg [15:0] reg_address;
     wire [4:0] rs;
     wire [4:0] rt;
     wire [4:0] rd;
     wire [4:0] shamt;
     wire [5:0] funct;
     wire [15:0] address;
+    assign rs = reg_rs;
+    assign rt = reg_rt;
+    assign rd = reg_rd;
+    assign samt = reg_shamt;
+    assign funct = reg_funct;
+    assign address = reg_address;
 
-    //instruction decode
+    //PC
+    wire [DATA_WIDTH-1:0] pc;
+
+    //Main control
+    wire [`CONTROL_WIDTH-1:0] control;
+
+    //Mux 1
+    wire [4:0] writeRegAddress;
+    wire regWrite;
+
+    // Register File:
+    wire [31:0] data_1;
+    wire [31:0] data_2;
+
+    //Sign Extend
+    wire [DATA_WIDTH-1:0] extended;
+
+    //ALU Control
+    wire [4:0] operation;
+    wire jr;
+
+    //ALU Wires
+    output wire [3:0] status_out;
+	output wire [31:0] ALU_out;
+    
+    wire overflow;
+    wire negative;
+    wire zero;
+    wire carry;
+
+    // register file
+    wire [DATA_WIDTH-1:0] writeRegData; 
+
+    //instruction decoder
     //instruction[31:26] is opcode
-    always@(aluOp, funct) begin
+    always@(instruction[31:26], funct) begin
         case(instruction[31:26])
             6'b000000: // R-Type Instruction
                 begin
-                    rs = instruction[25:21]; 
-                    rt = instruction[20:16]; 
-                    rd = instruction[15:11]; 
-                    shamt = instruction[10:6]; 
-                    funct = instruction[5:0];
+                    reg_rs = instruction[25:21]; 
+                    reg_rt = instruction[20:16]; 
+                    reg_rd = instruction[15:11]; 
+                    reg_shamt = instruction[10:6]; 
+                    reg_funct = instruction[5:0];
                 end
             6'b100011: //LW instruction
                 begin
-                    rs = instruction[25:21]; 
-                    rt = instruction[20:16]; 
-                    address = instruction[15:0];
+                    reg_rs = instruction[25:21]; 
+                    reg_rt = instruction[20:16]; 
+                    reg_address = instruction[15:0];
                 end
             6'b101011: //SW instruction
                 begin
-                    rs = instruction[25:21]; 
-                    rt = instruction[20:16]; 
-                    address = instruction[15:0];
+                    reg_rs = instruction[25:21]; 
+                    reg_rt = instruction[20:16]; 
+                    reg_address = instruction[15:0];
                 end
             6'b000100: //Branch instructions
                 begin
-                    rs = instruction[25:21]; 
-                    rt = instruction[20:16]; 
-                    address = instruction[15:0];
+                    reg_rs = instruction[25:21]; 
+                    reg_rt = instruction[20:16]; 
+                    reg_address = instruction[15:0];
                 end
             6'b000010: //jump
-                address = instruction[25:0];
+                reg_address = instruction[25:0];
             6'b001000: begin
                         //rs = instruction
                     end
@@ -258,10 +304,11 @@ module SingleCycleDataPath
     end
 
     // Program Counter:
-    Register #(.DATA_WIDTH(ADDRESS_WIDTH)) pcRegister(nextPC, clock, pc);
 
+    reg [DATA_WIDTH-1:0] reg_nextPC;
+    Register #(.DATA_WIDTH(ADDRESS_WIDTH)) pcRegister(reg_nextPC, clock, pc);
     initial begin
-        nextPC <= 'h00400000;
+        reg_nextPC <= 'h00400000;
         insMemRead <= 1;
     end
 
@@ -271,44 +318,28 @@ module SingleCycleDataPath
         rf.data[`sp] = 'h100103fc;
     end
 
-    // Register File:
-    wire [31:0] data_1;
-    wire [31:0] data_2;
-
-    //mux 1
-    wire [4:0] writeRegAddress;
-    assign writeRegAddress = control[REG_DST_BIT2] ? rd : rt;
-    wire regWrite;
-    assign regWrite = control[REG_WRITE_BIT];
-    RegisterFile #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH)) rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, data_1, data_2);
-
-
+    
     // TODO: Other logic, e.g. decode instruction, control, sign extend, wiring and logic for the register file
-    wire [`CONTROL_WIDTH-1:0] control;
     Control mainControl(.opcode(instruction[31:26]), .control(control));
 
+    //mux 1
+    assign writeRegAddress = control[`REG_DST_BIT2] ? rd : rt;
+    assign regWrite = control[`REG_WRITE_BIT];
+    RegisterFile #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH)) rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, data_1, data_2);
+
     //Signextend
-    wire [DATA_WIDTH-1:0] extended;
     SignExtend se (instruction[15:0], extended);
 
     //ALU Control
-    wire [4:0] operation;
-    wire jr;
-    ALUControl aluctrl(control[ALU_OP_BIT3:ALU_OP_BIT1], instruction[5:0] ,operation, jr);
+    ALUControl aluctrl(control[`ALU_OP_BIT1:`ALU_OP_BIT3], instruction[5:0] ,operation, jr);
 
     // TODO: Create and wire the ALU
-    output wire [3:0] status_out;
-	output wire [31:0] ALU_out;
-    ALU #(.DATA_WIDTH(32)) alu(operation, data_1, data_2, si, ALU_out, status_out);
-    wire overflow;
-    wire negative;
-    wire zero;
-    wire carry;
+    ALU #(.DATA_WIDTH(32)) alu(operation, data_1, data_2, 4'b0000, ALU_out, status_out);
     assign {overflow, negative, zero, carry} = status_out;
 
     //MUX 2, into ALU
     wire [DATA_WIDTH-1:0] alu_input_b;
-    assign alu_input_b = control[ALU_SRC_BIT] ? extended : data_2;
+    assign alu_input_b = control[`ALU_SRC_BIT] ? extended : data_2;
 
     //shift left 2
     wire [DATA_WIDTH-1:0] shifted;
@@ -319,20 +350,30 @@ module SingleCycleDataPath
     assign ALU_result = pcPlus4 + shifted;
 
     //MUX 3
-    wire [DATA_WIDTH-1:0] nextPC;
-    assign nextPC = (control[Branch] & zero) ? ALU_result : pcPlus4;
+    // wire [DATA_WIDTH-1:0] nextPC;
+    // assign nextPC = (control[`JUMP] & zero) ? ALU_result : pcPlus4;
+
+    always @(*)begin    
+        if (control[`JUMP_BIT] & zero==1)
+            reg_nextPC = ALU_result; //jump address
+        else 
+            reg_nextPC  = pcPlus4;
+    end
 
 
 
     //outputs
     //data mem output
-    assign dataMemWrite = control[MEM_WRITE_BIT];
+    assign dataMemWrite = control[`MEM_WRITE_BIT];
     // Data memory output
     assign dataMemAddress = ALU_out;
     // next instruction ouput
     assign insMemAddress = pcPlus4;
     assign dataWriteValue = data_2;
-    assign dataMemRead = control[MEM_READ_BIT];
+    assign dataMemRead = control[`MEM_READ_BIT];
+
+    //MUX 4
+    assign writeRegData = (control[`TO_REG_BIT2]==1) ? data : ALU_out;
 
 
 endmodule

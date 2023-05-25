@@ -254,7 +254,7 @@ module SingleCycleDataPath
 
     //ALU Wires
     output wire [3:0] status_out;
-	output wire [31:0] ALU_out;
+	output wire [31:0] aluOut;
     
     wire overflow;
     wire negative;
@@ -266,8 +266,10 @@ module SingleCycleDataPath
 
     //instruction decoder
     //instruction[31:26] is opcode
-    always@(instruction[31:26], funct) begin
-        case(instruction[31:26])
+    wire [5:0] opcode;
+    assign opcode = instruction[31:26];
+    always@(opcode, funct) begin
+        case(opcode)
             6'b000000: // R-Type Instruction
                 begin
                     reg_rs = instruction[25:21]; 
@@ -334,12 +336,14 @@ module SingleCycleDataPath
     ALUControl aluctrl(control[`ALU_OP_BIT1:`ALU_OP_BIT3], instruction[5:0] ,operation, jr);
 
     // TODO: Create and wire the ALU
-    ALU #(.DATA_WIDTH(32)) alu(operation, data_1, data_2, 4'b0000, ALU_out, status_out);
+    reg [3:0] status_reg;
+    assign status_out = status_reg;
+    ALU #(.DATA_WIDTH(32)) alu(operation, data_1, data_2, status_reg, aluOut, status_out);
     assign {overflow, negative, zero, carry} = status_out;
 
     //MUX 2, into ALU
     wire [DATA_WIDTH-1:0] alu_input_b;
-    assign alu_input_b = control[`ALU_SRC_BIT] ? extended : data_2;
+    assign alu_input_b = control[`ALU_SRC_BIT] ? 4 : data_2;
 
     //shift left 2
     wire [DATA_WIDTH-1:0] shifted;
@@ -366,14 +370,14 @@ module SingleCycleDataPath
     //data mem output
     assign dataMemWrite = control[`MEM_WRITE_BIT];
     // Data memory output
-    assign dataMemAddress = ALU_out;
+    assign dataMemAddress = aluOut;
     // next instruction ouput
     assign insMemAddress = pcPlus4;
     assign dataWriteValue = data_2;
     assign dataMemRead = control[`MEM_READ_BIT];
 
     //MUX 4
-    assign writeRegData = (control[`TO_REG_BIT2]==1) ? data : ALU_out;
+    assign writeRegData = (control[`TO_REG_BIT2]==1) ? data : aluOut;
 
 
 endmodule

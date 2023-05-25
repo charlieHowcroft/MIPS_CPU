@@ -14,15 +14,15 @@ module MIPSSingleCycle_tb();
     // Display results:
     task printHeader;
         begin
-            $display("pc, nextPC, $at, $a0, $v0, $t0, $t1, $t2, $s0, $s1, $s2, $s3, $s4, $s5, $s6, $s7, $ra, $sp, opcode, rs, rt, rd, shiftAmount, funct, immediate, jumpAddress, aluOut, mem[0], mem[4], mem[8], mem[c], mem[10], mem[14], stk[3ec], stk[3f0], stk[3f4], stk[3f8], stk[3fc], V, N, Z, C, EPC, cause, instruction");
+            $display("pc, nextPC, $at, $a0, $v0, $t0, $t1, $t2, $s0, $s1, $s2, $s3, $s4, $s5, $s6, $s7, $ra, $sp, opcode, rs, rt, rd, shamt, funct, extended, aluOut, mem[0], mem[4], mem[8], mem[c], mem[10], mem[14], stk[3ec], stk[3f0], stk[3f4], stk[3f8], stk[3fc], V, N, Z, C, instruction");
         end
     endtask
 
     task printRow;
         begin
-            $display("0x%0h, 0x%0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0b, %0b, %0b, %0b, %0h, %0h, %s", 
+            $display("0x%0h, 0x%0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0h, %0b, %0b, %0b, %0b, %0h, %0h, %s", 
                 ss.pc, 
-                ss.nextPC, 
+                ss.reg_nextPC, 
                 
                 ss.rf.data[`at],
                 ss.rf.data[`a0],
@@ -45,10 +45,10 @@ module MIPSSingleCycle_tb();
                 ss.rs, 
                 ss.rt, 
                 ss.rd,
-                ss.shiftAmount,
+                ss.shamt,
                 ss.funct,
-                ss.immediate,
-                ss.jumpAddress,
+                ss.extended,
+                // ss.jumpAddress,
 
                 ss.aluOut,
 
@@ -65,13 +65,10 @@ module MIPSSingleCycle_tb();
                 dataMemory['h3f8],
                 dataMemory['h3fc],
 
-                ss.nextStatus[`STATUS_V_BIT],
-                ss.nextStatus[`STATUS_N_BIT],
-                ss.nextStatus[`STATUS_Z_BIT],
-                ss.nextStatus[`STATUS_C_BIT],
-
-                ss.epc,
-                ss.nextCause,
+                ss.status_reg[`STATUS_V_BIT],
+                ss.status_reg[`STATUS_N_BIT],
+                ss.status_reg[`STATUS_Z_BIT],
+                ss.status_reg[`STATUS_C_BIT],
 
                 instruction[ss.pc - 'h00400000]
             );
@@ -146,7 +143,7 @@ module MIPSSingleCycle_tb();
         instruction['h08] <= "beq $8,$9,0x00000005  ";
 
         // Run:
-        for(i = 0; i < 512; i++) begin
+        for(i = 0; i < 3; i++) begin
             tick();
             printRow();
         end

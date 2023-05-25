@@ -252,8 +252,8 @@ module SingleCycleDataPath
     wire jr;
 
     //ALU Wires
-    output wire [3:0] status_out;
-	output wire [31:0] aluOut;
+    wire [3:0] status_out;
+	wire [31:0] aluOut;
     
     wire overflow;
     wire negative;
@@ -313,21 +313,23 @@ module SingleCycleDataPath
         reg_nextPC <= 'h00400000;
         insMemRead <= 1;
     end
+    
+    //mux 1
+    assign writeRegAddress = control[`REG_DST_BIT2] ? rd : rt;
+    assign regWrite = control[`REG_WRITE_BIT];
+    RegisterFile #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH)) rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, data_1, data_2);
 
+    
+    wire [31:0] pcPlus4;
     assign pcPlus4 = pc + 4;
     always @(pcPlus4) $display("pcPlus4 0x%0h", pcPlus4);
     initial begin
-        rf.data[`sp] = 'h100103fc;
+//        rf.data[`sp] = 'h100103fc;
     end
 
     
     // TODO: Other logic, e.g. decode instruction, control, sign extend, wiring and logic for the register file
     Control mainControl(.opcode(instruction[31:26]), .control(control));
-
-    //mux 1
-    assign writeRegAddress = control[`REG_DST_BIT2] ? rd : rt;
-    assign regWrite = control[`REG_WRITE_BIT];
-    RegisterFile #(.ADDRESS_WIDTH(5), .DATA_WIDTH(DATA_WIDTH)) rf(clock, rs, rt, writeRegAddress, writeRegData, regWrite, data_1, data_2);
 
     //Signextend
     SignExtend se (instruction[15:0], extended);
@@ -363,7 +365,7 @@ module SingleCycleDataPath
     always @(reg_nextPC) $display("reg_nextPC 0x%0h", reg_nextPC);
 
     //MUX 5
-    wire [DATA_WIDTH-1:0] = jumpAddress;
+    wire [DATA_WIDTH-1:0] jumpAddress;
     assign jumpAddress = {pcPlus4[31:28], (instruction[25:0]<<2)};
     always @(*)begin    
         if (control[`JUMP_BIT]==1)

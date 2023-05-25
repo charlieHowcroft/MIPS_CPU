@@ -1,0 +1,791 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu May 25 12:43:40 2023
+# Process ID: 14592
+# Current directory: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1
+# Command line: vivado.exe -log SingleCycleDataPath.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SingleCycleDataPath.tcl
+# Log file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1/SingleCycleDataPath.vds
+# Journal file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1\vivado.jou
+# Running On: LAPTOP-NAQO2U6M, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 8, Host memory: 7968 MB
+#-----------------------------------------------------------
+source SingleCycleDataPath.tcl -notrace
+Command: synth_design -top SingleCycleDataPath -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17716
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ALU' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:80]
+INFO: [Synth 8-9937] previous definition of design element 'ALU' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:80]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:84]
+INFO: [Synth 8-9937] previous definition of design element 'overflow' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:84]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:98]
+INFO: [Synth 8-9937] previous definition of design element 'Register' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:98]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
+INFO: [Synth 8-9937] previous definition of design element 'RegisterFile' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:136]
+INFO: [Synth 8-9937] previous definition of design element 'SignExtend' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:136]
+INFO: [Synth 8-11241] undeclared symbol 'samt', assumed default net type 'wire' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:229]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1203.355 ; gain = 408.359
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'SingleCycleDataPath' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:196]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:271]
+WARNING: [Synth 8-567] referenced signal 'instruction' should be on the sensitivity list [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:270]
+INFO: [Synth 8-6157] synthesizing module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:92]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Register' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:92]
+INFO: [Synth 8-251] pc 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:311]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:107]
+	Parameter ADDRESS_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:107]
+INFO: [Synth 8-251] pcPlus4 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:325]
+INFO: [Synth 8-6157] synthesizing module 'Control' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:139]
+INFO: [Synth 8-6155] done synthesizing module 'Control' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:139]
+INFO: [Synth 8-6157] synthesizing module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:130]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtend' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:130]
+INFO: [Synth 8-6157] synthesizing module 'ALUControl' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:168]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:28]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'overflow' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:28]
+INFO: [Synth 8-251] reg_nextPC 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:365]
+INFO: [Synth 8-251] insMemAddress 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:384]
+WARNING: [Synth 8-567] referenced signal 'insMemAddress' should be on the sensitivity list [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:384]
+INFO: [Synth 8-6155] done synthesizing module 'SingleCycleDataPath' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:196]
+WARNING: [Synth 8-3848] Net jr in module/entity ALUControl does not have driver. [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:168]
+WARNING: [Synth 8-3848] Net status_reg in module/entity SingleCycleDataPath does not have driver. [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:341]
+WARNING: [Synth 8-3917] design SingleCycleDataPath has port insMemRead driven by constant 1
+WARNING: [Synth 8-7129] Port statusIn[3] in module ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port statusIn[2] in module ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port statusIn[1] in module ALU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port jr in module ALUControl is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.992 ; gain = 497.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.992 ; gain = 497.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.992 ; gain = 497.996
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1292.992 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:9]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[8]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[8]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[9]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[9]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[10]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[10]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[11]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[11]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[12]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[12]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[13]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[13]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[14]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[14]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1379.426 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1379.426 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:47]
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:46]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_nextPC_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_rs_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:226]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_rt_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:227]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_rd_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:228]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   33 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   7 Input   33 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 2     
+	   8 Input   18 Bit        Muxes := 1     
+	  10 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   9 Input    3 Bit        Muxes := 1     
+	   7 Input    3 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design SingleCycleDataPath has port insMemRead driven by constant 1
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[29]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[29]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[28]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[28]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[27]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[27]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[26]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[26]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[25]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[25]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
+INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[31]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[30]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[29]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[28]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[27]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[26]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[25]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[24]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[23]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[22]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[21]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[20]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[19]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[18]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[17]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[16]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[15]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[14]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[13]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[12]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[11]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[10]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[9]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[8]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[7]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[6]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[5]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[4]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[3]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[2]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[1]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/out_reg[0]) is unused and will be removed from module SingleCycleDataPath.
+WARNING: [Synth 8-3332] Sequential element (alu/result_reg[32]) is unused and will be removed from module SingleCycleDataPath.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++--------------------+-------------+-----------+----------------------+--------------+
+|Module Name         | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++--------------------+-------------+-----------+----------------------+--------------+
+|SingleCycleDataPath | rf/data_reg | Implied   | 32 x 32              | RAM32M x 12  | 
++--------------------+-------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++--------------------+-------------+-----------+----------------------+--------------+
+|Module Name         | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
++--------------------+-------------+-----------+----------------------+--------------+
+|SingleCycleDataPath | rf/data_reg | Implied   | 32 x 32              | RAM32M x 12  | 
++--------------------+-------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[31] with 1st driver pin 'Q_reg[31]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[31] with 2nd driver pin 'reg_nextPC_reg[31]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[30] with 1st driver pin 'Q_reg[31]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[30] with 2nd driver pin 'reg_nextPC_reg[30]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[29] with 1st driver pin 'Q_reg[31]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[29] with 2nd driver pin 'reg_nextPC_reg[29]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[28] with 1st driver pin 'Q_reg[28]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[28] with 2nd driver pin 'reg_nextPC_reg[28]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[27] with 1st driver pin 'Q_reg[28]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[27] with 2nd driver pin 'reg_nextPC_reg[27]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[26] with 1st driver pin 'Q_reg[28]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[26] with 2nd driver pin 'reg_nextPC_reg[26]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[25] with 1st driver pin 'Q_reg[28]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[25] with 2nd driver pin 'reg_nextPC_reg[25]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[24] with 1st driver pin 'Q_reg[24]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[24] with 2nd driver pin 'reg_nextPC_reg[24]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[23] with 1st driver pin 'Q_reg[24]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[23] with 2nd driver pin 'reg_nextPC_reg[23]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[22] with 1st driver pin 'Q_reg[24]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[22] with 2nd driver pin 'reg_nextPC_reg[22]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[21] with 1st driver pin 'Q_reg[24]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[21] with 2nd driver pin 'reg_nextPC_reg[21]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[20] with 1st driver pin 'Q_reg[20]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[20] with 2nd driver pin 'reg_nextPC_reg[20]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[19] with 1st driver pin 'Q_reg[20]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[19] with 2nd driver pin 'reg_nextPC_reg[19]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[18] with 1st driver pin 'Q_reg[20]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[18] with 2nd driver pin 'reg_nextPC_reg[18]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[17] with 1st driver pin 'Q_reg[20]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[17] with 2nd driver pin 'reg_nextPC_reg[17]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[16] with 1st driver pin 'Q_reg[16]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[16] with 2nd driver pin 'reg_nextPC_reg[16]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[15] with 1st driver pin 'Q_reg[16]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[15] with 2nd driver pin 'reg_nextPC_reg[15]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[14] with 1st driver pin 'Q_reg[16]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[14] with 2nd driver pin 'reg_nextPC_reg[14]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[13] with 1st driver pin 'Q_reg[16]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[13] with 2nd driver pin 'reg_nextPC_reg[13]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[12] with 1st driver pin 'Q_reg[12]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[12] with 2nd driver pin 'reg_nextPC_reg[12]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[11] with 1st driver pin 'Q_reg[12]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[11] with 2nd driver pin 'reg_nextPC_reg[11]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[10] with 1st driver pin 'Q_reg[12]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[10] with 2nd driver pin 'reg_nextPC_reg[10]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[9] with 1st driver pin 'Q_reg[12]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[9] with 2nd driver pin 'reg_nextPC_reg[9]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[8] with 1st driver pin 'Q_reg[8]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[8] with 2nd driver pin 'reg_nextPC_reg[8]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[7] with 1st driver pin 'Q_reg[8]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[7] with 2nd driver pin 'reg_nextPC_reg[7]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[6] with 1st driver pin 'Q_reg[8]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[6] with 2nd driver pin 'reg_nextPC_reg[6]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[5] with 1st driver pin 'Q_reg[8]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[5] with 2nd driver pin 'reg_nextPC_reg[5]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[4] with 1st driver pin 'Q_reg[4]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[4] with 2nd driver pin 'reg_nextPC_reg[4]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[3] with 1st driver pin 'Q_reg[4]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[3] with 2nd driver pin 'reg_nextPC_reg[3]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[2] with 1st driver pin 'Q_reg[4]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[2] with 2nd driver pin 'reg_nextPC_reg[2]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[1] with 1st driver pin 'Q_reg[4]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[1] with 2nd driver pin 'reg_nextPC_reg[1]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin insMemAddress_OBUF[0] with 1st driver pin 'pcRegister/Q_reg[0]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:97]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin insMemAddress_OBUF[0] with 2nd driver pin 'reg_nextPC_reg[0]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       32|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    16|
+|3     |LUT1     |     1|
+|4     |LUT2     |     2|
+|5     |LUT3     |    37|
+|6     |LUT4     |    57|
+|7     |LUT5     |     4|
+|8     |LUT6     |    76|
+|9     |RAM32M   |    10|
+|10    |RAM32X1D |     4|
+|11    |FDRE     |    32|
+|12    |LD       |    79|
+|13    |IBUF     |    65|
+|14    |OBUF     |    99|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 64 critical warnings and 489 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1379.426 ; gain = 497.996
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1379.426 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 109 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1379.426 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 93 instances were transformed.
+  LD => LDCE: 79 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: 392c2f2d
+INFO: [Common 17-83] Releasing license: Synthesis
+44 Infos, 241 Warnings, 160 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1379.426 ; gain = 984.551
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1/SingleCycleDataPath.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SingleCycleDataPath_utilization_synth.rpt -pb SingleCycleDataPath_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May 25 12:44:21 2023...

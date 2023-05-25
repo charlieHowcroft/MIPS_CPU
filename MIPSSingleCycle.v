@@ -139,7 +139,6 @@
 module Control(input[5:0] opcode, output reg[`CONTROL_WIDTH-1:0] control);
     
     always @(opcode) begin
-        //EDITED edit maybe???
         case (opcode)
             /* R-Type */ 
             'b000000: control <= `DST_RD | `ALU_TO_REG | `ALU_FUNCT | `ALU_SRC_REG | `REG_WRITE | `ENABLE_INT;
@@ -309,13 +308,14 @@ module SingleCycleDataPath
 
     reg [DATA_WIDTH-1:0] reg_nextPC;
     Register #(.DATA_WIDTH(ADDRESS_WIDTH)) pcRegister(reg_nextPC, clock, pc);
+    always @(pc) $display("pc 0x%0h", pc);
     initial begin
         reg_nextPC <= 'h00400000;
         insMemRead <= 1;
     end
 
     assign pcPlus4 = pc + 4;
-
+    always @(pcPlus4) $display("pcPlus4 0x%0h", pcPlus4);
     initial begin
         rf.data[`sp] = 'h100103fc;
     end
@@ -354,14 +354,20 @@ module SingleCycleDataPath
     assign ALU_result = pcPlus4 + shifted;
 
     //MUX 3
-    // wire [DATA_WIDTH-1:0] nextPC;
-    // assign nextPC = (control[`JUMP] & zero) ? ALU_result : pcPlus4;
-
     always @(*)begin    
-        if (control[`JUMP_BIT] & zero==1)
-            reg_nextPC = ALU_result; //jump address
+        if ((control[`BEQ_BIT] | control[`BNE_BIT])& zero==1)
+            reg_nextPC = ALU_result;
         else 
             reg_nextPC  = pcPlus4;
+    end
+    always @(reg_nextPC) $display("reg_nextPC 0x%0h", reg_nextPC);
+
+    //MUX 5
+    wire [DATA_WIDTH-1:0] = jumpAddress;
+    assign jumpAddress = {pcPlus4[31:28], (instruction[25:0]<<2)};
+    always @(*)begin    
+        if (control[`JUMP_BIT]==1)
+            reg_nextPC = jumpAddress;
     end
 
 
@@ -373,6 +379,7 @@ module SingleCycleDataPath
     assign dataMemAddress = aluOut;
     // next instruction ouput
     assign insMemAddress = pcPlus4;
+    always @(reg_nextPC) $display("insMemAddress 0x%0h", insMemAddress);
     assign dataWriteValue = data_2;
     assign dataMemRead = control[`MEM_READ_BIT];
 

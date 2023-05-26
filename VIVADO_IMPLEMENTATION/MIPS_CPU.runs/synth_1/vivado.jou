@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu May 25 12:43:40 2023
-# Process ID: 14592
-# Current directory: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1
-# Command line: vivado.exe -log SingleCycleDataPath.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SingleCycleDataPath.tcl
-# Log file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1/SingleCycleDataPath.vds
-# Journal file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1\vivado.jou
+# Start of session at: Fri May 26 11:16:08 2023
+# Process ID: 5232
+# Current directory: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/synth_1
+# Command line: vivado.exe -log MIPSSingleCycle_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPSSingleCycle_tb.tcl
+# Log file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/synth_1/MIPSSingleCycle_tb.vds
+# Journal file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/synth_1\vivado.jou
 # Running On: LAPTOP-NAQO2U6M, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 8, Host memory: 7968 MB
 #-----------------------------------------------------------
-source SingleCycleDataPath.tcl -notrace
+source MIPSSingleCycle_tb.tcl -notrace

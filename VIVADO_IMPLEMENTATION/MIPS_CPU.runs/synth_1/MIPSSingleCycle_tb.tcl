@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1/SingleCycleDataPath.tcl"
+  variable script "C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/synth_1/MIPSSingleCycle_tb.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,17 +76,18 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.cache/wt [current_project]
-set_property parent.project_path C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.cache/wt [current_project]
+set_property parent.project_path C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.cache/ip [current_project]
+set_property ip_output_repo c:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v
   C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v
+  C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -101,10 +102,12 @@ read_xdc C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc
 set_property used_in_implementation false [get_files C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.srcs/utils_1/imports/synth_1/SingleCycleDataPath.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top SingleCycleDataPath -part xc7a35tcpg236-1
+synth_design -top MIPSSingleCycle_tb -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -114,10 +117,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef SingleCycleDataPath.dcp
+write_checkpoint -force -noxdef MIPSSingleCycle_tb.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file SingleCycleDataPath_utilization_synth.rpt -pb SingleCycleDataPath_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file MIPSSingleCycle_tb_utilization_synth.rpt -pb MIPSSingleCycle_tb_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

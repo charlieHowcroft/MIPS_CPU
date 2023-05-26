@@ -42,36 +42,28 @@ module ALU
     // TODO
     always@(control, a, b, statusIn) begin
         case (control)
-            'b00000: begin
+            5'b00000: begin
                     result = a & b; //and
                     out = result[DATA_WIDTH-1:0];
                     end
-            'b00001: begin
-                    result <= a | b; //or
+            5'b00001: begin
+                    result = a | b; //or
                     out = result[DATA_WIDTH-1:0];
                     end
-            'b00010: begin
+            5'b00010: begin
                     // shifted = statusIn[`STATUS_C_BIT] << DATA_WIDTH;
                     result = a + b  + statusIn[`STATUS_C_BIT]; //add
                     out = result[DATA_WIDTH-1:0];
                 end
-            'b01010: begin
+            5'b01010: begin
                     result = a - b; //sub
                     out = result[DATA_WIDTH-1:0];
                     end
-            'b01011: begin
-                    result = (a < b) ? 1 : 0; //SLT
-                    out = result[DATA_WIDTH-1:0];
-                    end
-            'b11000: begin
-                    result = !(a | b); //NOR
-                    out = result[DATA_WIDTH-1:0];
-                    end
-            default: out <= 1;
+            default: out = 1;
         endcase
     end
     assign statusOut[`STATUS_C_BIT] = result[DATA_WIDTH];
-    assign statusOut[`STATUS_Z_BIT] = result == 0;
+    assign statusOut[`STATUS_Z_BIT] = result == 0 ;
     assign statusOut[`STATUS_N_BIT] = result[DATA_WIDTH-1];
 
     wire overflow_wire;

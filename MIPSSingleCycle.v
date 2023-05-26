@@ -190,7 +190,7 @@ module ALUControl(input[2:0] aluOp, input[5:0] funct, output reg[4:0] operation,
             endcase
         else
                 operation<=`ALU_ADD;
-    end
+        end
 endmodule
 
 module SingleCycleDataPath
@@ -308,7 +308,7 @@ module SingleCycleDataPath
 
     reg [DATA_WIDTH-1:0] reg_nextPC;
     Register #(.DATA_WIDTH(ADDRESS_WIDTH)) pcRegister(reg_nextPC, clock, pc);
-    always @(pc) $display("pc 0x%0h", pc);
+    // always @(pc) $display("pc 0x%0h", pc);
     initial begin
         reg_nextPC <= 'h00400000;
         insMemRead <= 1;
@@ -322,7 +322,7 @@ module SingleCycleDataPath
     
     wire [31:0] pcPlus4;
     assign pcPlus4 = pc + 4;
-    always @(pcPlus4) $display("pcPlus4 0x%0h", pcPlus4);
+    // always @(pcPlus4) $display("pcPlus4 0x%0h", pcPlus4);
     initial begin
 //        rf.data[`sp] = 'h100103fc;
     end
@@ -362,7 +362,7 @@ module SingleCycleDataPath
         else 
             reg_nextPC  = pcPlus4;
     end
-    always @(reg_nextPC) $display("reg_nextPC 0x%0h", reg_nextPC);
+    // always @(reg_nextPC) $display("reg_nextPC 0x%0h", reg_nextPC);
 
     //MUX 5
     wire [DATA_WIDTH-1:0] jumpAddress;
@@ -381,7 +381,7 @@ module SingleCycleDataPath
     assign dataMemAddress = aluOut;
     // next instruction ouput
     assign insMemAddress = pcPlus4;
-    always @(reg_nextPC) $display("insMemAddress 0x%0h", insMemAddress);
+    // always @(reg_nextPC) $display("insMemAddress 0x%0h", insMemAddress);
     assign dataWriteValue = data_2;
     assign dataMemRead = control[`MEM_READ_BIT];
 

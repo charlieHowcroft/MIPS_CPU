@@ -1,0 +1,156 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri May 26 11:17:57 2023
+# Process ID: 5712
+# Current directory: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/impl_1
+# Command line: vivado.exe -log MIPSSingleCycle_tb.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MIPSSingleCycle_tb.tcl -notrace
+# Log file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/impl_1/MIPSSingleCycle_tb.vdi
+# Journal file: C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/impl_1\vivado.jou
+# Running On: LAPTOP-NAQO2U6M, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 8, Host memory: 7968 MB
+#-----------------------------------------------------------
+source MIPSSingleCycle_tb.tcl -notrace
+Command: open_checkpoint C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/impl_1/MIPSSingleCycle_tb.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 318.129 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 797.824 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 464 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1409.742 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 128 instances were transformed.
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 128 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2022.2 (64-bit) build 3671981
+OpenCheckpoint Checksum | Checksum: 0a20ac1a
+----- Checksum: PlaceDB: 00000000 ShapeSum: 0a20ac1a RouteDB: 00000000 
+open_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1409.742 ; gain = 1091.613
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][0] has multiple drivers: i_1_607/O, and ss/rf/data_reg[0][0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][10] has multiple drivers: i_1_597/O, and ss/rf/data_reg[0][10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][11] has multiple drivers: i_1_596/O, and ss/rf/data_reg[0][11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][12] has multiple drivers: i_1_595/O, and ss/rf/data_reg[0][12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][13] has multiple drivers: i_1_594/O, and ss/rf/data_reg[0][13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][14] has multiple drivers: i_1_593/O, and ss/rf/data_reg[0][14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][15] has multiple drivers: i_1_592/O, and ss/rf/data_reg[0][15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][16] has multiple drivers: i_1_591/O, and ss/rf/data_reg[0][16]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][17] has multiple drivers: i_1_590/O, and ss/rf/data_reg[0][17]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][18] has multiple drivers: i_1_589/O, and ss/rf/data_reg[0][18]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][19] has multiple drivers: i_1_588/O, and ss/rf/data_reg[0][19]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][1] has multiple drivers: i_1_606/O, and ss/rf/data_reg[0][1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][20] has multiple drivers: i_1_587/O, and ss/rf/data_reg[0][20]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][21] has multiple drivers: i_1_586/O, and ss/rf/data_reg[0][21]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][22] has multiple drivers: i_1_585/O, and ss/rf/data_reg[0][22]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][23] has multiple drivers: i_1_584/O, and ss/rf/data_reg[0][23]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][24] has multiple drivers: i_1_583/O, and ss/rf/data_reg[0][24]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][25] has multiple drivers: i_1_582/O, and ss/rf/data_reg[0][25]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][26] has multiple drivers: i_1_581/O, and ss/rf/data_reg[0][26]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][27] has multiple drivers: i_1_580/O, and ss/rf/data_reg[0][27]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][28] has multiple drivers: i_1_579/O, and ss/rf/data_reg[0][28]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][29] has multiple drivers: i_1_578/O, and ss/rf/data_reg[0][29]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][2] has multiple drivers: i_1_605/O, and ss/rf/data_reg[0][2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][30] has multiple drivers: i_1_577/O, and ss/rf/data_reg[0][30]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][31] has multiple drivers: i_1_576/O, and ss/rf/data_reg[0][31]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][3] has multiple drivers: i_1_604/O, and ss/rf/data_reg[0][3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][4] has multiple drivers: i_1_603/O, and ss/rf/data_reg[0][4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][5] has multiple drivers: i_1_602/O, and ss/rf/data_reg[0][5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][6] has multiple drivers: i_1_601/O, and ss/rf/data_reg[0][6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][7] has multiple drivers: i_1_600/O, and ss/rf/data_reg[0][7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][8] has multiple drivers: i_1_599/O, and ss/rf/data_reg[0][8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[0][9] has multiple drivers: i_1_598/O, and ss/rf/data_reg[0][9]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][0] has multiple drivers: i_1_287/O, and ss/rf/data_reg[10][0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][10] has multiple drivers: i_1_277/O, and ss/rf/data_reg[10][10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][11] has multiple drivers: i_1_276/O, and ss/rf/data_reg[10][11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][12] has multiple drivers: i_1_275/O, and ss/rf/data_reg[10][12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][13] has multiple drivers: i_1_274/O, and ss/rf/data_reg[10][13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][14] has multiple drivers: i_1_273/O, and ss/rf/data_reg[10][14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][15] has multiple drivers: i_1_272/O, and ss/rf/data_reg[10][15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][16] has multiple drivers: i_1_271/O, and ss/rf/data_reg[10][16]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][17] has multiple drivers: i_1_270/O, and ss/rf/data_reg[10][17]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][18] has multiple drivers: i_1_269/O, and ss/rf/data_reg[10][18]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][19] has multiple drivers: i_1_268/O, and ss/rf/data_reg[10][19]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][1] has multiple drivers: i_1_286/O, and ss/rf/data_reg[10][1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][20] has multiple drivers: i_1_267/O, and ss/rf/data_reg[10][20]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][21] has multiple drivers: i_1_266/O, and ss/rf/data_reg[10][21]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][22] has multiple drivers: i_1_265/O, and ss/rf/data_reg[10][22]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][23] has multiple drivers: i_1_264/O, and ss/rf/data_reg[10][23]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][24] has multiple drivers: i_1_263/O, and ss/rf/data_reg[10][24]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][25] has multiple drivers: i_1_262/O, and ss/rf/data_reg[10][25]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][26] has multiple drivers: i_1_261/O, and ss/rf/data_reg[10][26]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][27] has multiple drivers: i_1_260/O, and ss/rf/data_reg[10][27]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][28] has multiple drivers: i_1_259/O, and ss/rf/data_reg[10][28]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][29] has multiple drivers: i_1_258/O, and ss/rf/data_reg[10][29]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][2] has multiple drivers: i_1_285/O, and ss/rf/data_reg[10][2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][30] has multiple drivers: i_1_257/O, and ss/rf/data_reg[10][30]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][31] has multiple drivers: i_1_256/O, and ss/rf/data_reg[10][31]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][3] has multiple drivers: i_1_284/O, and ss/rf/data_reg[10][3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][4] has multiple drivers: i_1_283/O, and ss/rf/data_reg[10][4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][5] has multiple drivers: i_1_282/O, and ss/rf/data_reg[10][5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][6] has multiple drivers: i_1_281/O, and ss/rf/data_reg[10][6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][7] has multiple drivers: i_1_280/O, and ss/rf/data_reg[10][7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][8] has multiple drivers: i_1_279/O, and ss/rf/data_reg[10][8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[10][9] has multiple drivers: i_1_278/O, and ss/rf/data_reg[10][9]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][0] has multiple drivers: i_1_255/O, and ss/rf/data_reg[11][0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][10] has multiple drivers: i_1_245/O, and ss/rf/data_reg[11][10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][11] has multiple drivers: i_1_244/O, and ss/rf/data_reg[11][11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][12] has multiple drivers: i_1_243/O, and ss/rf/data_reg[11][12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][13] has multiple drivers: i_1_242/O, and ss/rf/data_reg[11][13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][14] has multiple drivers: i_1_241/O, and ss/rf/data_reg[11][14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][15] has multiple drivers: i_1_240/O, and ss/rf/data_reg[11][15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][16] has multiple drivers: i_1_239/O, and ss/rf/data_reg[11][16]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][17] has multiple drivers: i_1_238/O, and ss/rf/data_reg[11][17]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][18] has multiple drivers: i_1_237/O, and ss/rf/data_reg[11][18]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][19] has multiple drivers: i_1_236/O, and ss/rf/data_reg[11][19]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][1] has multiple drivers: i_1_254/O, and ss/rf/data_reg[11][1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][20] has multiple drivers: i_1_235/O, and ss/rf/data_reg[11][20]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][21] has multiple drivers: i_1_234/O, and ss/rf/data_reg[11][21]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][22] has multiple drivers: i_1_233/O, and ss/rf/data_reg[11][22]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][23] has multiple drivers: i_1_232/O, and ss/rf/data_reg[11][23]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][24] has multiple drivers: i_1_231/O, and ss/rf/data_reg[11][24]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][25] has multiple drivers: i_1_230/O, and ss/rf/data_reg[11][25]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][26] has multiple drivers: i_1_229/O, and ss/rf/data_reg[11][26]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][27] has multiple drivers: i_1_228/O, and ss/rf/data_reg[11][27]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][28] has multiple drivers: i_1_227/O, and ss/rf/data_reg[11][28]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][29] has multiple drivers: i_1_226/O, and ss/rf/data_reg[11][29]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][2] has multiple drivers: i_1_253/O, and ss/rf/data_reg[11][2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][30] has multiple drivers: i_1_225/O, and ss/rf/data_reg[11][30]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][31] has multiple drivers: i_1_224/O, and ss/rf/data_reg[11][31]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][3] has multiple drivers: i_1_252/O, and ss/rf/data_reg[11][3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][4] has multiple drivers: i_1_251/O, and ss/rf/data_reg[11][4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][5] has multiple drivers: i_1_250/O, and ss/rf/data_reg[11][5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][6] has multiple drivers: i_1_249/O, and ss/rf/data_reg[11][6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][7] has multiple drivers: i_1_248/O, and ss/rf/data_reg[11][7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][8] has multiple drivers: i_1_247/O, and ss/rf/data_reg[11][8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[11][9] has multiple drivers: i_1_246/O, and ss/rf/data_reg[11][9]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[12][0] has multiple drivers: i_1_223/O, and ss/rf/data_reg[12][0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[12][10] has multiple drivers: i_1_213/O, and ss/rf/data_reg[12][10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[12][11] has multiple drivers: i_1_212/O, and ss/rf/data_reg[12][11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data[12][12] has multiple drivers: i_1_211/O, and ss/rf/data_reg[12][12]/Q.
+INFO: [Common 17-14] Message 'DRC MDRV-1' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Project 1-461] DRC finished with 642 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1418.484 ; gain = 8.742
+INFO: [Common 17-83] Releasing license: Implementation
+17 Infos, 0 Warnings, 0 Critical Warnings and 101 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Fri May 26 11:18:22 2023...

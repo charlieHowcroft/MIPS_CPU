@@ -132,18 +132,22 @@ module MIPSSingleCycle_tb();
         
 
         // Machine Code:
-        instructionMemory['h00] <= 'h012a5820;
+        instructionMemory['h00] <= 'h24080064;
+        instructionMemory['h04] <= 'h240900c8;
+        instructionMemory['h08] <= 'h01095020;
 
 
         // Assembly: for visual testbench
-        instruction['h00] <= "add $t3, $t1, $t2";
+        instruction['h00] <= "li $t0 100";
+        instruction['h04] <= "li $t1 200";
+        instruction['h08] <= "add $t2 $t0 $t1";
 
         // Run:
-        for(i = 0; i < 3; i++) begin
-            tick();
-            printRow();
-        end
-        tick();
-        printRow();
+//        for(i = 0; i < 6; i++) begin
+//            tick();
+//            printRow();
+//        end
+//        tick();
+//        printRow();
     end
 endmodule

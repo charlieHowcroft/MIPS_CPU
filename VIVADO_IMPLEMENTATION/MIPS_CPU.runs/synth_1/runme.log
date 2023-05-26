@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log SingleCycleDataPath.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SingleCycleDataPath.tcl
+    with args -log MIPSSingleCycle_tb.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPSSingleCycle_tb.tcl
 
 
 
@@ -9,77 +9,109 @@
   **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
-source SingleCycleDataPath.tcl -notrace
-Command: synth_design -top SingleCycleDataPath -part xc7a35tcpg236-1
+source MIPSSingleCycle_tb.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.srcs/utils_1/imports/synth_1/SingleCycleDataPath.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.srcs/utils_1/imports/synth_1/SingleCycleDataPath.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top MIPSSingleCycle_tb -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17716
+INFO: [Synth 8-7075] Helper process launched with PID 4000
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ALU' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:80]
-INFO: [Synth 8-9937] previous definition of design element 'ALU' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:80]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:84]
-INFO: [Synth 8-9937] previous definition of design element 'overflow' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:84]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:98]
-INFO: [Synth 8-9937] previous definition of design element 'Register' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:98]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
-INFO: [Synth 8-9937] previous definition of design element 'RegisterFile' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:136]
-INFO: [Synth 8-9937] previous definition of design element 'SignExtend' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:136]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ALU' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:72]
+INFO: [Synth 8-9937] previous definition of design element 'ALU' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:72]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:76]
+INFO: [Synth 8-9937] previous definition of design element 'overflow' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:76]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:90]
+INFO: [Synth 8-9937] previous definition of design element 'Register' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:90]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:120]
+INFO: [Synth 8-9937] previous definition of design element 'RegisterFile' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:120]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
+INFO: [Synth 8-9937] previous definition of design element 'SignExtend' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
 INFO: [Synth 8-11241] undeclared symbol 'samt', assumed default net type 'wire' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:229]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ALU' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:72]
+INFO: [Synth 8-9937] previous definition of design element 'ALU' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:72]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:76]
+INFO: [Synth 8-9937] previous definition of design element 'overflow' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:76]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:90]
+INFO: [Synth 8-9937] previous definition of design element 'Register' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:90]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:120]
+INFO: [Synth 8-9937] previous definition of design element 'RegisterFile' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:120]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
+INFO: [Synth 8-9937] previous definition of design element 'SignExtend' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:128]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'Control' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:166]
+INFO: [Synth 8-9937] previous definition of design element 'Control' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:166]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'ALUControl' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:194]
+INFO: [Synth 8-9937] previous definition of design element 'ALUControl' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:194]
+INFO: [Synth 8-11241] undeclared symbol 'samt', assumed default net type 'wire' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:229]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'SingleCycleDataPath' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:392]
+INFO: [Synth 8-9937] previous definition of design element 'SingleCycleDataPath' is here [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:392]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:55]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:56]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:57]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:58]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:59]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:60]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:62]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:63]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:64]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:65]
+WARNING: [Synth 8-6901] identifier 'dataMemory' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:66]
+WARNING: [Synth 8-6901] identifier 'instruction' is used before its declaration [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:73]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1203.355 ; gain = 408.359
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1203.746 ; gain = 407.699
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'MIPSSingleCycle_tb' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:3]
+INFO: [Synth 8-251] pc, nextPC, $at, $a0, $v0, $t0, $t1, $t2, $s0, $s1, $s2, $s3, $s4, $s5, $s6, $s7, $ra, $sp, opcode, rs, rt, rd, shamt, funct, extended, aluOut, mem[0], mem[4], mem[8], mem[c], mem[10], mem[14], stk[3ec], stk[3f0], stk[3f4], stk[3f8], stk[3fc], V, N, Z, C, instruction [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:17]
+INFO: [Synth 8-6085] Hierarchical reference on 'data' stops possible memory inference [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:109]
 INFO: [Synth 8-6157] synthesizing module 'SingleCycleDataPath' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:196]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:271]
 WARNING: [Synth 8-567] referenced signal 'instruction' should be on the sensitivity list [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:270]
-INFO: [Synth 8-6157] synthesizing module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:92]
+INFO: [Synth 8-6157] synthesizing module 'Register' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:84]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Register' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:92]
-INFO: [Synth 8-251] pc 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:311]
-INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:107]
+INFO: [Synth 8-6155] done synthesizing module 'Register' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:84]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:99]
 	Parameter ADDRESS_WIDTH bound to: 5 - type: integer 
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:107]
-INFO: [Synth 8-251] pcPlus4 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:325]
+INFO: [Synth 8-6085] Hierarchical reference on 'data' stops possible memory inference [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:99]
 INFO: [Synth 8-6157] synthesizing module 'Control' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:139]
 INFO: [Synth 8-6155] done synthesizing module 'Control' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:139]
-INFO: [Synth 8-6157] synthesizing module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:130]
-INFO: [Synth 8-6155] done synthesizing module 'SignExtend' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:130]
+INFO: [Synth 8-6157] synthesizing module 'SignExtend' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtend' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:122]
 INFO: [Synth 8-6157] synthesizing module 'ALUControl' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:168]
 INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:168]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:28]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:82]
-INFO: [Synth 8-6155] done synthesizing module 'overflow' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:82]
+INFO: [Synth 8-6157] synthesizing module 'overflow' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'overflow' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:74]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:28]
-INFO: [Synth 8-251] reg_nextPC 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:365]
-INFO: [Synth 8-251] insMemAddress 0xxxxxxxxx [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:384]
-WARNING: [Synth 8-567] referenced signal 'insMemAddress' should be on the sensitivity list [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:384]
 INFO: [Synth 8-6155] done synthesizing module 'SingleCycleDataPath' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:196]
+INFO: [Synth 8-6155] done synthesizing module 'MIPSSingleCycle_tb' (0#1) [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:3]
 WARNING: [Synth 8-3848] Net jr in module/entity ALUControl does not have driver. [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:168]
-WARNING: [Synth 8-3848] Net status_reg in module/entity SingleCycleDataPath does not have driver. [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:341]
-WARNING: [Synth 8-3917] design SingleCycleDataPath has port insMemRead driven by constant 1
+WARNING: [Synth 8-3848] Net clock in module/entity MIPSSingleCycle_tb does not have driver. [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:5]
+WARNING: [Synth 8-3848] Net clock in module/entity MIPSSingleCycle_tb does not have driver. [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:5]
 WARNING: [Synth 8-7129] Port statusIn[3] in module ALU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port statusIn[2] in module ALU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port statusIn[1] in module ALU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port jr in module ALUControl is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.992 ; gain = 497.996
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1299.938 ; gain = 503.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.992 ; gain = 497.996
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1299.938 ; gain = 503.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.992 ; gain = 497.996
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1299.938 ; gain = 503.891
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1292.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1299.938 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -361,56 +393,79 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 Finished Parsing XDC File [C:/Users/chuck/OneDrive/Desktop/ENG442/Basys3_Master.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1379.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1397.109 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1379.426 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1397.109 ; gain = 0.000
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:47]
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.srcs/utils_1/imports/synth_1/SingleCycleDataPath.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1397.109 ; gain = 601.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1397.109 ; gain = 601.062
+---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:46]
 WARNING: [Synth 8-327] inferring latch for variable 'reg_nextPC_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
 WARNING: [Synth 8-327] inferring latch for variable 'reg_rs_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:226]
 WARNING: [Synth 8-327] inferring latch for variable 'reg_rt_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:227]
 WARNING: [Synth 8-327] inferring latch for variable 'reg_rd_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:228]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_funct_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:230]
+WARNING: [Synth 8-327] inferring latch for variable 'insReadValue_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:90]
+WARNING: [Synth 8-327] inferring latch for variable 'dataReadValue_reg' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle_tb.v:95]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : 
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input   33 Bit       Adders := 2     
-	   2 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               32 Bit    Registers := 33    
 +---Muxes : 
-	   7 Input   33 Bit        Muxes := 1     
-	   7 Input   32 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 2     
+	   5 Input   33 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 8     
+	   4 Input   32 Bit        Muxes := 1     
 	   8 Input   18 Bit        Muxes := 1     
 	  10 Input    5 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 1     
 	   9 Input    3 Bit        Muxes := 1     
-	   7 Input    3 Bit        Muxes := 2     
-	   7 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -427,154 +482,19 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design SingleCycleDataPath has port insMemRead driven by constant 1
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[29]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[29]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[28]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[28]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[27]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[27]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[26]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[26]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[25]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[25]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[24]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[24]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[16]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[17]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[18]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[19]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[20]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[21]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[22]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
-WARNING: [Synth 8-264] enable of latch \reg_nextPC_reg[23]  is always disabled
-INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[31]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[30]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[29]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[28]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[27]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[26]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[25]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[24]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[23]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[22]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[21]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[20]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[19]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[18]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[17]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[16]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[15]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[14]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[13]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[12]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[11]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[10]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[9]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[8]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[7]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[6]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[5]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[4]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[3]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[2]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[1]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/out_reg[0]) is unused and will be removed from module SingleCycleDataPath.
-WARNING: [Synth 8-3332] Sequential element (alu/result_reg[32]) is unused and will be removed from module SingleCycleDataPath.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Preliminary Mapping Report (see note below)
-+--------------------+-------------+-----------+----------------------+--------------+
-|Module Name         | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
-+--------------------+-------------+-----------+----------------------+--------------+
-|SingleCycleDataPath | rf/data_reg | Implied   | 32 x 32              | RAM32M x 12  | 
-+--------------------+-------------+-----------+----------------------+--------------+
++-------------------+----------------+-----------+----------------------+------------------+
+|Module Name        | RTL Object     | Inference | Size (Depth x Width) | Primitives       | 
++-------------------+----------------+-----------+----------------------+------------------+
+|MIPSSingleCycle_tb | dataMemory_reg | Implied   | 1 K x 32             | RAM256X1S x 128  | 
++-------------------+----------------+-----------+----------------------+------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
@@ -584,24 +504,24 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Final Mapping Report
-+--------------------+-------------+-----------+----------------------+--------------+
-|Module Name         | RTL Object  | Inference | Size (Depth x Width) | Primitives   | 
-+--------------------+-------------+-----------+----------------------+--------------+
-|SingleCycleDataPath | rf/data_reg | Implied   | 32 x 32              | RAM32M x 12  | 
-+--------------------+-------------+-----------+----------------------+--------------+
++-------------------+----------------+-----------+----------------------+------------------+
+|Module Name        | RTL Object     | Inference | Size (Depth x Width) | Primitives       | 
++-------------------+----------------+-----------+----------------------+------------------+
+|MIPSSingleCycle_tb | dataMemory_reg | Implied   | 1 K x 32             | RAM256X1S x 128  | 
++-------------------+----------------+-----------+----------------------+------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -609,8 +529,16 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[25]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[23]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[22]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[21]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[20]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[19]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[18]) is unused and will be removed from module MIPSSingleCycle_tb.
+WARNING: [Synth 8-3332] Sequential element (insReadValue_reg[17]) is unused and will be removed from module MIPSSingleCycle_tb.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -627,109 +555,187 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/rf/data[32]_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/status_reg_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/status_reg_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/status_reg_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/status_reg_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/shamt_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/shamt_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/shamt_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/shamt_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin ss/shamt_inferred:in0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[31] with 1st driver pin 'Q_reg[31]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[31] with 2nd driver pin 'reg_nextPC_reg[31]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[30] with 1st driver pin 'Q_reg[31]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[30] with 2nd driver pin 'reg_nextPC_reg[30]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[29] with 1st driver pin 'Q_reg[31]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[29] with 2nd driver pin 'reg_nextPC_reg[29]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[28] with 1st driver pin 'Q_reg[28]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[28] with 2nd driver pin 'reg_nextPC_reg[28]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[27] with 1st driver pin 'Q_reg[28]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[27] with 2nd driver pin 'reg_nextPC_reg[27]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[26] with 1st driver pin 'Q_reg[28]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[26] with 2nd driver pin 'reg_nextPC_reg[26]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[25] with 1st driver pin 'Q_reg[28]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[25] with 2nd driver pin 'reg_nextPC_reg[25]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[24] with 1st driver pin 'Q_reg[24]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[24] with 2nd driver pin 'reg_nextPC_reg[24]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[23] with 1st driver pin 'Q_reg[24]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[23] with 2nd driver pin 'reg_nextPC_reg[23]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[22] with 1st driver pin 'Q_reg[24]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[22] with 2nd driver pin 'reg_nextPC_reg[22]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[21] with 1st driver pin 'Q_reg[24]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[21] with 2nd driver pin 'reg_nextPC_reg[21]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[20] with 1st driver pin 'Q_reg[20]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[20] with 2nd driver pin 'reg_nextPC_reg[20]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[19] with 1st driver pin 'Q_reg[20]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[19] with 2nd driver pin 'reg_nextPC_reg[19]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[18] with 1st driver pin 'Q_reg[20]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[18] with 2nd driver pin 'reg_nextPC_reg[18]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[17] with 1st driver pin 'Q_reg[20]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[17] with 2nd driver pin 'reg_nextPC_reg[17]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[16] with 1st driver pin 'Q_reg[16]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[16] with 2nd driver pin 'reg_nextPC_reg[16]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[15] with 1st driver pin 'Q_reg[16]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[15] with 2nd driver pin 'reg_nextPC_reg[15]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[14] with 1st driver pin 'Q_reg[16]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[14] with 2nd driver pin 'reg_nextPC_reg[14]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[13] with 1st driver pin 'Q_reg[16]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[13] with 2nd driver pin 'reg_nextPC_reg[13]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[12] with 1st driver pin 'Q_reg[12]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[12] with 2nd driver pin 'reg_nextPC_reg[12]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[11] with 1st driver pin 'Q_reg[12]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[11] with 2nd driver pin 'reg_nextPC_reg[11]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[10] with 1st driver pin 'Q_reg[12]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[10] with 2nd driver pin 'reg_nextPC_reg[10]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[9] with 1st driver pin 'Q_reg[12]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[9] with 2nd driver pin 'reg_nextPC_reg[9]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[8] with 1st driver pin 'Q_reg[8]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[8] with 2nd driver pin 'reg_nextPC_reg[8]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[7] with 1st driver pin 'Q_reg[8]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[7] with 2nd driver pin 'reg_nextPC_reg[7]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[6] with 1st driver pin 'Q_reg[8]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[6] with 2nd driver pin 'reg_nextPC_reg[6]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[5] with 1st driver pin 'Q_reg[8]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[5] with 2nd driver pin 'reg_nextPC_reg[5]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[4] with 1st driver pin 'Q_reg[4]_i_1/O[3]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[4] with 2nd driver pin 'reg_nextPC_reg[4]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[3] with 1st driver pin 'Q_reg[4]_i_1/O[2]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[3] with 2nd driver pin 'reg_nextPC_reg[3]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[2] with 1st driver pin 'Q_reg[4]_i_1/O[1]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[2] with 2nd driver pin 'reg_nextPC_reg[2]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[1] with 1st driver pin 'Q_reg[4]_i_1/O[0]' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:44]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin reg_nextPC[1] with 2nd driver pin 'reg_nextPC_reg[1]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin insMemAddress_OBUF[0] with 1st driver pin 'pcRegister/Q_reg[0]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:97]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin insMemAddress_OBUF[0] with 2nd driver pin 'reg_nextPC_reg[0]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSSingleCycle.v:372]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_1 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_1 with 2nd driver pin 'ss/rf/data_reg[18][31]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_2 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_2 with 2nd driver pin 'ss/rf/data_reg[18][30]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_3 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_3 with 2nd driver pin 'ss/rf/data_reg[18][29]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_4 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_4 with 2nd driver pin 'ss/rf/data_reg[18][28]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_5 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_5 with 2nd driver pin 'ss/rf/data_reg[18][27]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_6 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_6 with 2nd driver pin 'ss/rf/data_reg[18][26]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_7 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_7 with 2nd driver pin 'ss/rf/data_reg[18][25]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_8 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_8 with 2nd driver pin 'ss/rf/data_reg[18][24]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_9 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_9 with 2nd driver pin 'ss/rf/data_reg[18][23]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_10 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_10 with 2nd driver pin 'ss/rf/data_reg[18][22]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_11 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_11 with 2nd driver pin 'ss/rf/data_reg[18][21]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_12 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_12 with 2nd driver pin 'ss/rf/data_reg[18][20]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_13 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_13 with 2nd driver pin 'ss/rf/data_reg[18][19]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_14 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_14 with 2nd driver pin 'ss/rf/data_reg[18][18]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_15 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_15 with 2nd driver pin 'ss/rf/data_reg[18][17]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_16 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_16 with 2nd driver pin 'ss/rf/data_reg[18][16]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_17 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_17 with 2nd driver pin 'ss/rf/data_reg[18][15]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_18 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_18 with 2nd driver pin 'ss/rf/data_reg[18][14]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_19 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_19 with 2nd driver pin 'ss/rf/data_reg[18][13]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_20 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_20 with 2nd driver pin 'ss/rf/data_reg[18][12]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_21 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_21 with 2nd driver pin 'ss/rf/data_reg[18][11]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_22 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_22 with 2nd driver pin 'ss/rf/data_reg[18][10]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_23 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_23 with 2nd driver pin 'ss/rf/data_reg[18][9]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_24 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_24 with 2nd driver pin 'ss/rf/data_reg[18][8]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_25 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_25 with 2nd driver pin 'ss/rf/data_reg[18][7]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_26 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_26 with 2nd driver pin 'ss/rf/data_reg[18][6]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_27 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_27 with 2nd driver pin 'ss/rf/data_reg[18][5]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_28 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_28 with 2nd driver pin 'ss/rf/data_reg[18][4]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_29 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_29 with 2nd driver pin 'ss/rf/data_reg[18][3]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_30 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_30 with 2nd driver pin 'ss/rf/data_reg[18][2]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_31 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_31 with 2nd driver pin 'ss/rf/data_reg[18][1]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_32 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[18]_inferred__0_n_32 with 2nd driver pin 'ss/rf/data_reg[18][0]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_1 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_1 with 2nd driver pin 'ss/rf/data_reg[17][31]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_2 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_2 with 2nd driver pin 'ss/rf/data_reg[17][30]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_3 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_3 with 2nd driver pin 'ss/rf/data_reg[17][29]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_4 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_4 with 2nd driver pin 'ss/rf/data_reg[17][28]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_5 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_5 with 2nd driver pin 'ss/rf/data_reg[17][27]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_6 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_6 with 2nd driver pin 'ss/rf/data_reg[17][26]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_7 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_7 with 2nd driver pin 'ss/rf/data_reg[17][25]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_8 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_8 with 2nd driver pin 'ss/rf/data_reg[17][24]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_9 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_9 with 2nd driver pin 'ss/rf/data_reg[17][23]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_10 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_10 with 2nd driver pin 'ss/rf/data_reg[17][22]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_11 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_11 with 2nd driver pin 'ss/rf/data_reg[17][21]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_12 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_12 with 2nd driver pin 'ss/rf/data_reg[17][20]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_13 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_13 with 2nd driver pin 'ss/rf/data_reg[17][19]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_14 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_14 with 2nd driver pin 'ss/rf/data_reg[17][18]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_15 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_15 with 2nd driver pin 'ss/rf/data_reg[17][17]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_16 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_16 with 2nd driver pin 'ss/rf/data_reg[17][16]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_17 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_17 with 2nd driver pin 'ss/rf/data_reg[17][15]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_18 with 1st driver pin 'GND' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin data[17]_inferred__0_n_18 with 2nd driver pin 'ss/rf/data_reg[17][14]/Q' [C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPSComponents.v:111]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|       32|Failed |Multi driven nets |
+|1     |multi_driven_nets |      0|      643|Failed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -742,49 +748,47 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |BUFG     |     2|
-|2     |CARRY4   |    16|
-|3     |LUT1     |     1|
-|4     |LUT2     |     2|
-|5     |LUT3     |    37|
-|6     |LUT4     |    57|
-|7     |LUT5     |     4|
-|8     |LUT6     |    76|
-|9     |RAM32M   |    10|
-|10    |RAM32X1D |     4|
-|11    |FDRE     |    32|
-|12    |LD       |    79|
-|13    |IBUF     |    65|
-|14    |OBUF     |    99|
-+------+---------+------+
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |    16|
+|3     |LUT1      |   668|
+|4     |LUT2      |    31|
+|5     |LUT3      |   193|
+|6     |LUT4      |     5|
+|7     |LUT5      |   169|
+|8     |LUT6      |  1548|
+|9     |MUXF7     |   256|
+|10    |MUXF8     |    64|
+|11    |RAM256X1S |   128|
+|12    |FDRE      |  1056|
+|13    |LD        |   142|
++------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1397.109 ; gain = 601.062
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 64 critical warnings and 489 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1379.426 ; gain = 497.996
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1379.426 ; gain = 584.430
+Synthesis finished with 0 errors, 1287 critical warnings and 58 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:36 . Memory (MB): peak = 1397.109 ; gain = 503.891
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 1397.109 ; gain = 601.062
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1379.426 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 109 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1397.109 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 606 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1379.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1397.109 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 93 instances were transformed.
-  LD => LDCE: 79 instances
-  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
-  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  A total of 270 instances were transformed.
+  LD => LDCE: 142 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 128 instances
 
-Synth Design complete, checksum: 392c2f2d
+Synth Design complete, checksum: 40cb3bf1
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 241 Warnings, 160 Critical Warnings and 0 Errors encountered.
+57 Infos, 169 Warnings, 205 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1379.426 ; gain = 984.551
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:52 . Memory (MB): peak = 1397.109 ; gain = 978.000
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint 'C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/MIPS_CPU.runs/synth_1/SingleCycleDataPath.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file SingleCycleDataPath_utilization_synth.rpt -pb SingleCycleDataPath_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May 25 12:44:21 2023...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/chuck/OneDrive/Desktop/ENG442/MIPS_CPU/VIVADO_IMPLEMENTATION/MIPS_CPU.runs/synth_1/MIPSSingleCycle_tb.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MIPSSingleCycle_tb_utilization_synth.rpt -pb MIPSSingleCycle_tb_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May 26 11:17:09 2023...
